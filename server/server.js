@@ -7,6 +7,16 @@ const PORT = process.env.PORT || 8080
 
 app.use(cors());
 
+// Add Access Control Allow Origin headers
+app.use((req, res, next) => {
+	res.setHeader("Access-Control-Allow-Origin", "https://chat-app-pushkar.vercel.app");
+	res.header(
+	  "Access-Control-Allow-Headers",
+	  "Origin, X-Requested-With, Content-Type, Accept"
+	);
+	next();
+  });
+
 const server = http.createServer(app);
 
 app.get(`/`, (req, res) => {
@@ -15,6 +25,7 @@ app.get(`/`, (req, res) => {
 
 const io = new Server(server, {
     cors : {
+		
 		origin : "https://chat-app-pushkar.vercel.app",
 		methods : ["GET", "POST"],
 }
