@@ -37,7 +37,7 @@ const io = new Server(server, {
 let nextId = 0;
 
 io.on("connection", (socket) => {
-	console.log(`user connected : ${socket.id} `);
+	// console.log(`user connected : ${socket.id} `);
 
 	// when the user joins the room
 	socket.on("joinRoom", (roomId) => {
@@ -60,7 +60,7 @@ io.on("connection", (socket) => {
 
 	// when the user disconnects
 	socket.on("disconnect", () => {
-		console.log(`user disconnected -> ${socket.id}`)
+		// console.log(`user disconnected -> ${socket.id}`)
 	})
 })
 
