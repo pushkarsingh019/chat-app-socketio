@@ -9,9 +9,13 @@ app.use(cors());
 
 const server = http.createServer(app);
 
+app.get(`/`, (req, res) => {
+	res.send("the chatbackend is up and running");
+})
+
 const io = new Server(server, {
     cors : {
-		origin : ["https://chat-app-pushkar.vercel.app/", "http://localhost:3000"],
+		origin : "https://chat-app-pushkar.vercel.app",
 		methods : ["GET", "POST"],
 }
 });
