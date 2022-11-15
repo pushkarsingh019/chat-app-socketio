@@ -28,6 +28,8 @@ const io = new Server(server, {
 		
 		origin : "https://chat-app-pushkar.vercel.app",
 		methods : ["GET", "POST"],
+		credentials : true,
+		transports : [`websocket`, `polling`]
 }
 });
 
