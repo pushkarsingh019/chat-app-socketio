@@ -8,7 +8,7 @@ function App(){
     const [room, setRoom] = useState("");
     const [showChat, setshowChat] = useState(false);
 
-    const socket = io.connect("http://localhost:8080", {reconnection : false});
+    const socket = io.connect("https://chat-app-socketio.vercel.app", {reconnection : false});
 
     socket.on("error", (err) => {
         console.log("error on the client side " + err);
